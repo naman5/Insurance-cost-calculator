@@ -15,7 +15,7 @@ def analyze_bmi(bmi_value):
   elif bmi < 18.5:
     print("Your BMI is in the underweight range. Increasing your BMI will not help lower your cost, but it will help improve your health.")
   else:
-    print("Erro!!")
+    print("Error!!")
 
 # Create calculate_insurance_cost() function below: 
 def calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name):
@@ -29,5 +29,18 @@ def calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name):
 maria_insurance_cost = calculate_insurance_cost(28, 0, 26.2, 3, 0, "Maria")
 
 # Estimate Omar's insurance cost 
-omar_insurance_cost = calculate_insurance_cost(35, 1, 22.2, 0, 1, "Omar")
-
+omar_insurance_cost = calculate_insurance_cost(25, 1, 28.5, 3, 0, "Omar")
+# Estimate Valentina's insruance cost 
+valentina_insurance_cost = calculate_insurance_cost(53, 0, 31.4, 0, 1, "Valentina")
+#comparing estimated cost with actual cost
+#actual cost list 
+names = ["Maria", "Omar", "Valentina"]
+insurance_costs = [4150.0, 5320.0, 35210.0]
+insurance_data = list(zip(names, insurance_costs))
+print("Here is the actual insurance cost data: " + str(insurance_data))
+# estimated insurance cost list
+estimated_insurance_data = []
+estimated_insurance_data.append(("Maria", maria_insurance_cost))
+estimated_insurance_data.append(("Omar", omar_insurance_cost))
+estimated_insurance_data.append(("Valentina", valentina_insurance_cost))
+print("Here is the estimated insurance cost data: "+ str(estimated_insurance_data))
