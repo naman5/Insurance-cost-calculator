@@ -44,3 +44,20 @@ estimated_insurance_data.append(("Maria", maria_insurance_cost))
 estimated_insurance_data.append(("Omar", omar_insurance_cost))
 estimated_insurance_data.append(("Valentina", valentina_insurance_cost))
 print("Here is the estimated insurance cost data: "+ str(estimated_insurance_data))
+# calculating the average cost and comparing to find whether it's above average or below average 
+total_cost = 0
+for actual_cost in actual_insurance_costs:
+  total_cost += actual_cost
+average_cost = total_cost / len(actual_insurance_costs)
+print("Average Insurance Cost: " + str(average_cost))
+i = 0
+for i in range(len(names)):
+  name = names[i]
+  insurance_cost = actual_insurance_costs[i]
+  print("The insurance cost for " + name + " is "+ str(insurance_cost)+" dollars.")
+  if insurance_cost > average_cost:
+    print("The insurance cost for " + name + " is above average")
+  elif insurance_cost < average_cost:
+    print("The insurance cost for " + name + " is below average")
+  else:
+    print("The insurance cost for "+name+" is equal to the average")
